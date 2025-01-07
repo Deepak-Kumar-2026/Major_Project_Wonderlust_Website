@@ -1,4 +1,52 @@
 
+<style>
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+  
+  .dark-mode .btn {
+    background-color: #333;
+    border-color: #444;
+  }
+  
+  .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: #555;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark-mode-toggle i {
+    font-size: 1.5rem;
+  }
+</style>
+
+
+
+
+
 
 <% layout("/layouts/boilerplate")  %>
      <script>
@@ -39,6 +87,7 @@
           </div>
           <% } %>
                     
+        </style>
           <div class="col-8 offset-3 mb-3">
                  <% if(currUser) { %>
                   <hr>
