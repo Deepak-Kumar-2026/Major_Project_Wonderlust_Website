@@ -9,18 +9,18 @@ body {
 }
       /* navbar styling */
       .navbar{
-          height:5rem;
-          background-color: white;
-      }
-      
-      .fa-compass{
-          font-size: 2rem;
-          color: #fe424d;
-      }
-      
-      .nav-link{
-          color:#222222 !important;
-      }
+        height:5rem;
+        background-color: white;
+    }
+    
+    .fa-compass{
+        font-size: 2rem;
+        color: #fe424d;
+    }
+    
+    .nav-link{
+        color:#222222 !important;
+    }
       
       /* footer styling */
       .f-info-links a{
@@ -37,7 +37,7 @@ body {
           align-items: center;
       }
       .f-info-socials i{
-          font-size: 1.2 rem;
+          font-size: 1.2rem;
           margin-right: 1rem;
       }
       
@@ -106,11 +106,12 @@ body {
       
       /*map */
      #map { 
-       height: 400px;
-       width: 90vh;
+       height: 300px;
+       width: 60vh;
 
      }
-    
+
+     
  
 
 
