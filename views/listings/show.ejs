@@ -1,8 +1,12 @@
 
 <style>
+  body{
+    background-color:  #e5eaf5;
+  }
   body.dark-mode {
     background-color: #121212;
-    color: #ffffff;
+    color:  #e5eaf5;
+
   }
   
   .dark-mode .card {
@@ -20,7 +24,7 @@
     top: 20px;
     right: 20px;
     background-color: #333;
-    color: white;
+    color: #d0bdf4;
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -41,6 +45,19 @@
   .dark-mode-toggle i {
     font-size: 1.5rem;
   }
+  #comment{
+    background-color:#e8f9fd ;
+    
+  }
+  .card{
+    background-color:  #e5eaf5;
+
+
+  }
+  
+  
+ 
+  
 </style>
 
 
@@ -114,9 +131,9 @@
                                 <label for="first-rate5" title="Amazing">5 stars</label>
                               </fieldset>
                             </div>
-                               <div class="mb-3 mt-3">
+                               <div class="mb-3 mt-3"  >
                                         <label for="comment" class="form-label">Comments</label>
-                                        <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+                                        <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control"  id="comment" required></textarea>
                                         <div class="invalid-feedback">Plese add submit some comments for review</div>
 
                                </div>

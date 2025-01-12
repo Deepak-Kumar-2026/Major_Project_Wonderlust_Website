@@ -1,8 +1,10 @@
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensures full viewport height */
     margin: 0; /* Removes default margin */
+
 }
 .container {
     flex: 1 !important; /* Fills the remaining space between navbar and footer */
@@ -10,7 +12,8 @@ body {
       /* navbar styling */
       .navbar{
         height:5rem;
-        background-color: white;
+        /* background-color: white; */
+        background-color: #d0bdf4;
     }
     
     .fa-compass{
@@ -43,7 +46,8 @@ body {
       
       .f-info {
         height: 8rem;
-        background-color: #ebebeb;
+        /* background-color: #ebebeb; */
+        background-color: #a0d2eb;
         text-align: center;
         display: flex;
         flex-wrap: wrap;
@@ -59,26 +63,31 @@ body {
       
       }
       .card-img-top{
-          border-radius: 1rem !important;
+          border-radius:10px !important;
           width: 100% !important;
           object-fit: cover !important;
       }
       .card-body{
           padding: 0 !important;
+          background-color: #e5eaf5;
+
       }
       .card-text p{
           font-weight: 400 !important;
       }
       .listing-link{
           text-decoration: none !important;
+
       }
       .card-img-overlay{
           opacity: 0;
       }
       .card-img-overlay:hover{
           opacity: 0.2;
-          background-color: white;
           box-shadow: 2px 20px 20px blueviolet;
+          background-color: #e5eaf5;
+      
+
       }
       /* new page */
       .add-btn{
@@ -106,8 +115,8 @@ body {
       
       /*map */
      #map { 
-       height: 300px;
-       width: 60vh;
+       height: 400px;
+       width: 100vh;
 
      }
 

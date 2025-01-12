@@ -1,5 +1,7 @@
 <style>
-
+       body{
+            background-color: aliceblue;
+       }
       .search-btn{
        background-color: #fe424d;
        color: #fff;
@@ -22,6 +24,17 @@
        padding: 0.5rem 3rem 0.5rem 3rem;
        font-size: 1rem;
       }
+      .form-control{
+            background-color: aliceblue;
+      }
+      #signup b{
+            color: #8E1616;
+
+      }
+      .nav-link b{
+            color: #3E001F;
+      }
+      
 
     
     
@@ -54,11 +67,11 @@
                     </form>
               </div>
               <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="/listings/new">Add Your Nearby Locations</a>
+                    <a class="nav-link" href="/listings/new"><b>Add Your Nearby Locations</b></a>
                     <% if (currUser) { %>
                           <a class="nav-link" href="/logout">Logout</a>
                           <% } else { %>
-                                <a class="nav-link" href="/signup"><b>Signup</b></a>
+                                <a class="nav-link" href="/signup" id="signup" ><b>Signup</b></a>
                                 <a class="nav-link" href="/login">
                                       <i class="fa-regular fa-circle-user"></i> <b>Login</b>
                                 </a>
@@ -84,14 +97,18 @@
                                 <i class="fa-solid fa-magnifying-glass"></i> Search
                           </button>
                     </form>
-                    <% if (!currUser) { %>
-                          <a class="nav-link" href="/signup"><b>Signup</b></a>
-                          <a class="nav-link" href="/login">
-                                <i class="fa-regular fa-circle-user"></i> <b>Login</b>
-                          </a>
-                          <% } else { %>
-                                <a class="nav-link" href="/logout">Logout</a>
-                                <% } %>
+
+                   
+                        <% if (!currUser) { %>
+                              <a class="nav-link" href="/signup" id="signup"><b>Signup</b></a>
+                              <a class="nav-link" href="/login">
+                                    <i class="fa-regular fa-circle-user"></i> <b>Login</b>
+                              </a>
+                              <% } else { %>
+                                    <a class="nav-link" href="/logout">Logout</a>
+                                    <% } %>
+                   
+
               </div>
         </div>
   </div>
