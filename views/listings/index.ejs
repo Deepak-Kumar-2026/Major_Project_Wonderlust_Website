@@ -1,51 +1,89 @@
 <% layout("/layouts/boilerplate")  %>
 
 
+
+
 <style>
   
-body{
-  background-color: #e5eaf5;
-}
-  #filters{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-  }
-  .filter{
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-  }
-  .filter:hover{
-    opacity: 1;
-    cursor: pointer;
-  }
-  .filter p{
-    font-size: 0.8rem;
-  }
-  .tax-info{
-    display: none;
-  }
-  .tax-toggle{
-    border: 1px solid black;
-    border-radius: 1rem;
-    height: 3.5rem;
-    padding: 1rem;
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-    
-  }
-  .listing-link{
+  body{
     background-color: #e5eaf5;
-
   }
+    #filters{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
   
- 
-</style>
-
+    }
+    .filter{
+      text-align: center;
+      margin-right: 2rem;
+      margin-top: 2rem;
+      opacity: 0.7;
+    }
+    .filter:hover{
+      opacity: 1;
+      cursor: pointer;
+    }
+    .filter p{
+      font-size: 0.8rem;
+    }
+    .tax-info{
+      display: none;
+    }
+    .tax-toggle{
+      border: 1px solid black;
+      border-radius: 1rem;
+      height: 3.5rem;
+      padding: 1rem;
+      margin-left: 7px;
+      display: flex;
+      align-items: center;
+      margin-top:1em;
+      
+    }
+    .listing-link{
+      background-color: #e5eaf5;
+  
+    }
+    
+    .filter div {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+    .filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    
+    .filter:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .filter:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    
+   
+  </style>
+  
 
 
     <div id="filters">
@@ -121,7 +159,8 @@ body{
         </div>
         <p>BoatHouse</p>
       </div>
-      <div class="tax-toggle">
+
+      <div class="tax-toggle ">
         <div class="form-check-reverse form-switch">
           <input class="form-check-input" 
           type="checkbox"

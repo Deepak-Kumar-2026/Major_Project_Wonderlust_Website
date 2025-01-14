@@ -100,7 +100,7 @@ body {
           border: none !important;
       }
       
-      /* show page */
+      /* show page
       .show-img{
           height: 30vh;
       }
@@ -111,17 +111,15 @@ body {
       .show-card{
           padding-left:0;
           padding-right:0;
-      }
+      } */
       
       /*map */
      #map { 
-       height: 400px;
-       width: 100vh;
-
+       height: 100vh;
+       width: 95vh
      }
 
+     /*login*/
      
- 
-
 
    
