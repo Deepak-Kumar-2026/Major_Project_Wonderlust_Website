@@ -4,6 +4,19 @@
     body{
       background-color:aliceblue;
     }
+    #create {
+      width: 100px;
+      height: 100px;
+      animation-name: create;
+      animation-duration: 4s;
+    }
+    
+    @keyframes create{
+      0%   {color: red;}
+      25%  {color: yellow;}
+      50%  {color: blue;}
+      100% {color: green;}
+    }
 </style>
 
 
@@ -11,7 +24,7 @@
       <div class="col-8 offset-2">
         <br><br>
 
-    <h3>Create a New Listing</h3>
+    <h3><b id="create">Create a New Listing </b></h3>
 
     <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data" >
           <div class="mb-3">
