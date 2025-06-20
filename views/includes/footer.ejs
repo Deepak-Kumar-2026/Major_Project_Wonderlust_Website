@@ -112,6 +112,53 @@
     padding-top: 25px;
     margin-top: 50px;
   }
+
+  .footer-column form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.footer-column input[type="email"] {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-column button {
+  padding: 12px 20px;
+  background: #ff385c;
+  border: none;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Responsive fix for small screens */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column form {
+    flex-direction: column;
+  }
+
+  .footer-column input[type="email"] {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column button {
+    border-radius: 5px;
+  }
+}
+
 </style>
 
 <footer class="footer">
