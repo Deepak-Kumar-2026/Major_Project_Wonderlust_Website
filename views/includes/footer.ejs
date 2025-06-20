@@ -1,24 +1,177 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
+  .footer {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 70px 20px 40px 20px; /* Increased padding for height */
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
 
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* little more gap between columns */
+  }
 
-<footer>
-          <div class="f-info">
-                    <div class="f-info-socials">
-                              <i class="fa-brands fa-square-facebook"></i>
-                              <i class="fa-brands fa-square-instagram"></i>
-                              <i class="fa-brands fa-linkedin"></i>
-                    </div>
+  .footer-column {
+    flex: 1;
+    min-width: 220px;
+  }
 
+  .footer-column h3 {
+    color: #ff385c;
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
 
+  .footer-column h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+  }
 
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
 
+  .footer-column ul li {
+    margin-bottom: 12px;
+  }
 
-                    <div class="f-info-brand"> &copy; WanderLust Privated Limited</div>
-                     <div class="f-info-links">
-                    <a class="/Privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
-          </div>
-          </div>
-          
+  .footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ff385c;
+  }
+
+  .social-icons a {
+    font-size: 30px;
+    margin-right: 18px;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #ff385c;
+  }
+
+  .footer-column form {
+    display: flex;
+    flex-direction: row;  /* Converted to row for better search box design */
+  }
+
+  .footer-column input[type="email"] {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .footer-column button {
+    padding: 12px 20px;
+    background: #ff385c;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .footer-column button:hover {
+    background: #e63250;
+  }
+
+  .payments p {
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .payments img {
+    height: 35px;
+    margin-right: 12px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 25px;
+    margin-top: 50px;
+  }
+</style>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>WanderLust</h3>
+      <p>Discover unique stays and experiences around the world. Safe, affordable and unforgettable travel begins here.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Special Offers</a></li>
+        <li><a href="#">Travel Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="/help">Help Center</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Subscribe</h4>
+      <form>
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="payments">
+        <p>We Accept</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Paypal">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 WanderLust Pvt. Ltd. All rights reserved.
+  </div>
 </footer>
-

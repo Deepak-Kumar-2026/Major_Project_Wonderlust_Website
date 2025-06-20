@@ -1,146 +1,202 @@
-<style>
-       body{
-            background-color: aliceblue;
-       }
-      .search-btn{
-       background-color: #fe424d;
-       color: #fff;
-       border-radius: 22px;
-       padding: 0 1rem 0 1rem;
-       width: 10em;
-    
-      }
-      .search-btn:hover{
-       background-color: #fe424d;
-       color: #fff;
-      }
-      .search-btn i{
-       display: inline;
-       margin-right: 0.5rem;
-    
-      }
-      .search-inp{
-       border-radius: 25px;
-       padding: 0.5rem 3rem 0.5rem 3rem;
-       font-size: 1rem;
-      }
-      .form-control{
-            background-color: aliceblue;
-      }
-      #signup b{
-            color: #8E1616;
+   <style>
+    body {
+        background-color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
 
-      }
-      .nav-link b{
-            color: #3E001F;
-      }
-      
-.input-group-text {
-  background-color: #f8f9fa;
-  border: 1px solid #ced4da;
-}
+    .navbar {
+        background: #e0ecdd;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 1rem 2rem; /* Increased vertical padding */
+        min-height: 120px; /* Ensuring minimum height */
+        transition: all 0.3s ease-in-out;
+    }
 
-.search-inp {
-  border: 1px solid #ced4da;
-}
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 2rem;
+        color: #ff385c !important;
+        display: flex;
+        align-items: center;
+    }
 
-.search-btn {
-  background-color: #007bff;
-  color: white;
-  border: 1px solid #007bff;
-}
+    .navbar-brand i {
+        margin-right: 10px;
+    }
 
-.search-btn:hover {
-  background-color: #0056b3;
-  border: 1px solid #0056b3;
-}
+    .nav-link {
+        font-weight: 600;
+        color: #333 !important;
+        font-size: 1.1rem;
+    }
 
-@media (max-width: 576px) {
-  .input-group {
-    flex-direction: column;
-  }
+    .nav-link:hover {
+        color: #ff385c !important;
+    }
 
-  .input-group-text, .search-inp, .search-btn {
-    width: 50%;
-    margin-bottom: 5px;
-  }
+    .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
-  .search-btn {
-    margin-bottom: 0;
-  }
-}
+    .search-inp {
+        border-radius: 50px 0 0 50px;
+        padding: 0.7rem 1.2rem;
+        border: 1px solid #ccc;
+        width: 350px;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
 
-    
-    </style>
+    .search-inp:focus {
+        border-color: #ff385c;
+        box-shadow: 0 0 8px rgba(255, 56, 92, 0.4);
+    }
+
+    .search-btn {
+        border-radius: 0 50px 50px 0;
+        background: #ff385c;
+        color: white;
+        border: none;
+        padding: 0.7rem 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+
+    .search-btn:hover {
+        background: #e0315f;
+    }
+
+    .add-location-btn, .logout-btn, .signup-btn, .login-btn {
+        padding: 0.6rem 1.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        margin-left: 10px;
+    }
+
+    .add-location-btn {
+        background: linear-gradient(135deg, #00b09b, #96c93d);
+        color: white !important;
+        border: none;
+    }
+
+    .add-location-btn:hover {
+        background: linear-gradient(135deg, #008e7f, #7ab32d);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .logout-btn {
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        color: white !important;
+        border: none;
+    }
+
+    .logout-btn:hover {
+        background: linear-gradient(135deg, #e0315f, #e02b0b);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .signup-btn, .login-btn {
+        border: 2px solid #007bff;
+        color: #007bff !important;
+        background: white;
+    }
+
+    .signup-btn:hover, .login-btn:hover {
+        background-color: #007bff;
+        color: white !important;
+    }
+
+    @media (max-width: 768px) {
+        .search-inp {
+            width: 70%;
+        }
+
+        .add-location-btn, .logout-btn, .signup-btn, .login-btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+</style>
 
 
+<nav class="navbar navbar-expand-md sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings">
+            <i class="fa-regular fa-compass"></i> Wanderlust
+        </a>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-
-  <div class="container-fluid">
-        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-
-        <!-- Toggler for offcanvas (visible only on mobile) -->
         <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"></span>
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Standard Navbar Collapse for Desktop (visible only on larger screens) -->
-        <div class="collapse navbar-collapse d-none d-md-block" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                    <a class="nav-link" href="/listings">Explore</a>
-              </div>
-              <div class="navbar-nav ms-auto">
-                    <form class="d-flex" role="search" action="/listings/search" method="GET">
-                          <input class="form-control me-2 search-inp" type="search" name="query"
-                                placeholder="Search destination" required />
-                          <button class="btn search-btn" type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i> Search
-                          </button>
-                    </form>
-              </div>
-              <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="/listings/new"><b>Add Location <i class="fa-solid fa-location-dot"></i></b></a>
+        <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/listings">Explore</a>
+            </div>
 
-                    <% if (currUser) { %>
-                          <a class="nav-link" href="/logout">Logout</a>
-                          <% } else { %>
-                                <a class="nav-link" href="/signup" id="signup" ><b>Signup</b></a>
-                                <a class="nav-link" href="/login">
-                                      <i class="fa-regular fa-circle-user"></i> <b>Login</b>
+            <!-- Center Search -->
+            <div class="search-container ms-auto me-auto">
+                <form class="d-flex" role="search" action="/listings/search" method="GET">
+                    <input class="form-control search-inp" type="search" name="query" placeholder="Search destination" required />
+                    <button class="btn search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </form>
+            </div>
 
-                                </a>
-                                <% } %>
-              </div>
+            <div class="d-flex ms-3">
+                <a class="add-location-btn" href="/listings/new">
+                    <i class="fa-solid fa-location-dot"></i> Add Location
+                </a>
+
+                <% if (currUser) { %>
+                <a class="logout-btn" href="/logout">
+                    <i class="fa-solid fa-sign-out-alt"></i> Logout
+                </a>
+                <% } else { %>
+                <a class="signup-btn" href="/signup">
+                    <i class="fa-solid fa-user-plus"></i> Signup
+                </a>
+                <a class="login-btn" href="/login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </a>
+                <% } %>
+            </div>
         </div>
-        <!-- Offcanvas Navbar for Mobile (visible only on smaller screens) -->
+
+        <!-- Offcanvas Navbar for Mobile -->
         <div class="offcanvas offcanvas-end d-md-none" tabindex="-1" id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                    <div class="navbar-nav">
-                          <a class="nav-link" href="/listings">Explore</a>
-                          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-                    </div>
-                    
-                    <form class="d-flex my-3" role="search"> <input class="form-control me-2 search-inp" type="search" placeholder="Search destination" /> <button class="btn search-btn type= submit"> <i class="fa-solid fa-magnifying-glass"></i> Search </button> </form>
-
-                        <% if (!currUser) { %>
-                              <a class="nav-link" href="/signup" id="signup"><b>Signup</b></a>
-                              <a class="nav-link" href="/login">
-                                    <i class="fa-regular fa-circle-user"></i> <b>Login</b>
-                              </a>
-                              <% } else { %>
-                                    <a class="nav-link" href="/logout">Logout</a>
-                                    <% } %>
-                   
-
-              </div>
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/listings">Explore</a>
+                    <a class="nav-link" href="/listings/new">Add Location</a>
+                </div>
+                <form class="d-flex my-3" role="search" action="/listings/search" method="GET">
+                    <input class="form-control search-inp me-2" type="search" name="query" placeholder="Search destination" required />
+                    <button class="btn search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </form>
+                <% if (!currUser) { %>
+                <a class="signup-btn" href="/signup"><i class="fa-solid fa-user-plus"></i> Signup</a>
+                <a class="login-btn" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <% } else { %>
+                <a class="logout-btn" href="/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+                <% } %>
+            </div>
         </div>
-  </div>
+    </div>
 </nav>
-

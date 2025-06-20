@@ -1,34 +1,84 @@
 <% layout("/layouts/boilerplate")  %>
 
+<style>
+  body {
+    background: #f7f7f7;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
 
-    
+  .signup-container {
+    max-width: 500px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
 
-<div class="container"> <!-- Ensure container class is here -->
-          <h1 class="col-6 offset-3">Signup on Wonderlust</h1>
-          <div class="row mt-3"> 
-              <div class="col-6 offset-3">
-                  <form action="/signup" method="POST" novalidate class="needs-validation"> 
-                      <div class="mb-3">
-                          <label for="username" class="form-label">Username</label>
-                          <input name="username" id="username" type="text" class="form-control" required>
-                          <div class="valid-feedback">Looks good</div>
-                    </div>
+  .signup-container h1 {
+    text-align: center;
+    color: #ff385c;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
 
-                    <div class="mb-3">
-                              <label for="email" class="form-label">Email</label>
-                              <input name="email" id="email" type="email" class="form-control" required>
-                    </div>
+  .form-label {
+    font-weight: 500;
+    color: #333;
+  }
 
-                    <div class="mb-3">
-                              <label for="password" class="form-label">Password</label>
-                              <input name="password" id="password" type="password" class="form-control" required>
-                    </div>
+  .form-control {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+  }
 
-                    <button class=" btn btn-success">Signup</button>
-    
+  .form-control:focus {
+    border-color: #ff385c;
+    box-shadow: 0 0 5px rgba(255,56,92,0.5);
+  }
 
-                     
-                  </form>
-              </div>
-          </div>
+  .btn-submit {
+    background-color: #ff385c;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.3s;
+  }
+
+  .btn-submit:hover {
+    background-color: #e63250;
+  }
+
+  .valid-feedback {
+    font-size: 12px;
+    color: green;
+  }
+</style>
+
+<div class="signup-container">
+  <h1>Signup on Wanderlust</h1>
+  <form action="/signup" method="POST" novalidate class="needs-validation">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input name="username" id="username" type="text" class="form-control" required>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input name="email" id="email" type="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input name="password" id="password" type="password" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn-submit">Signup</button>
+  </form>
 </div>
