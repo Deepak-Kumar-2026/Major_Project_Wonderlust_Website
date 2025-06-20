@@ -3,6 +3,8 @@
 <head>
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <style>
@@ -11,13 +13,11 @@
     margin: 0;
     padding: 0;
   }
-
   .main-container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
   }
-
   .show-card {
     background-color: #fff;
     border-radius: 15px;
@@ -25,22 +25,18 @@
     overflow: hidden;
     transition: transform 0.3s ease;
   }
-
   .show-card:hover {
     transform: scale(1.01);
   }
-
   .show-card img {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
   }
-
   .card-body {
     padding: 2rem;
   }
-
   .price-badge {
     background-color: #28a745;
     color: white;
@@ -48,23 +44,19 @@
     font-size: 1.4rem;
     border-radius: 10px;
   }
-
   .location-info {
     font-size: 1.3rem;
     color: #333;
   }
-
   .reviews-section {
     margin-top: 50px;
   }
-
   .review-form {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-
   .review-card {
     background-color: #ffffff;
     border-radius: 15px;
@@ -72,27 +64,24 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
   }
-
   .review-card h5 {
     font-weight: 600;
     color: #333;
   }
-
   .review-card p {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
   }
-
   .review-delete-btn {
     margin-top: 10px;
   }
-
   #comment {
     background-color: #e8f9fd;
   }
 </style>
 
 <div class="main-container">
+
   <!-- Listing Card -->
   <div class="show-card">
     <img src="<%= listing.image.url %>" alt="listing_image">
@@ -101,14 +90,12 @@
       <p class="text-muted mb-3"><i>Owned By: <b><%= listing.owner.username %></b></i></p>
       <p class="mb-3"><%= listing.description %></p>
 
-      <!-- Price Badge -->
       <div class="mb-4">
         <span class="price-badge">
           ₹ <%= listing.price ? listing.price.toLocaleString('en-IN') : 'N/A' %> / night
         </span>
       </div>
 
-      <!-- Location -->
       <div class="mb-3">
         <i class="fa-solid fa-location-dot text-danger me-2"></i>
         <span class="location-info"><%= listing.location %>, <%= listing.country %></span>
@@ -119,7 +106,7 @@
   <!-- Action Buttons -->
   <% if(currUser){ %>
   <div class="mt-4">
-    <% if(listing.owner._id.equals(currUser._id)){ %>
+    <% if(listing.owner && listing.owner._id.toString() === currUser._id.toString()){ %>
     <div class="d-flex justify-content-between">
       <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark w-50 me-3">Edit</a>
       <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" class="w-50">
@@ -131,6 +118,20 @@
       <a href="/listings/<%= listing._id %>/book" class="btn btn-primary w-100">Book Now</a>
     </div>
     <% } %>
+  </div>
+  <% } %>
+
+  <!-- Booking Calendar -->
+  <% if(currUser && listing.owner && listing.owner._id.toString() !== currUser._id.toString()) { %>
+  <div class="mt-5 mb-4">
+    <h4>Select Booking Date</h4>
+    <form action="/listings/<%= listing._id %>/book" method="POST">
+      <div class="mb-3">
+        <label for="bookingDate" class="form-label">Choose Date:</label>
+        <input type="text" id="bookingDate" name="bookingDate" class="form-control" placeholder="Select a date" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Confirm Booking</button>
+    </form>
   </div>
   <% } %>
 
@@ -172,26 +173,36 @@
       <p class="starability-result" data-rating="<%= review.rating %>"></p>
       <p><%= review.comment %></p>
 
-      <% if(currUser && review.author._id.equals(currUser._id)){ %>
+      <% if(currUser && review.author._id.toString() === currUser._id.toString()){ %>
       <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST" class="review-delete-btn">
         <button class="btn btn-danger btn-sm w-100">Delete</button>
       </form>
       <% } %>
     </div>
     <% } %>
-
     <% } %>
   </div>
 
-  <!-- Map -->
+  <!-- Map Section -->
   <div class="mt-5 mb-3">
     <h3>Where you'll be</h3>
     <div id="map" class="w-100" style="height: 400px;"></div>
   </div>
 </div>
 
+<!-- MAP AND CALENDAR SCRIPTS -->
 <script>
   const mapToken = "<%= process.env.MAP_TOKEN %>";
   const listing = <%- JSON.stringify(listing) %>;
 </script>
+
 <script src="/js/map.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#bookingDate", {
+      minDate: "today",
+      dateFormat: "Y-m-d",
+    });
+  });
+</script>
